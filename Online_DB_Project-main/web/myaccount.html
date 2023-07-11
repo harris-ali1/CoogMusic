@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/myaccount.css">
+	<link rel="stylesheet" type="text/css" href="/css/navbar.css"/>
+
+	<title>My Account</title>
+    <!-- <script src="script.js"></script> -->
+</head>
+<body style = "background-color: black;">
+	<header>
+        <div class="main">
+            <ul>
+                <li><a  href="/"> Home</a> </a></li>
+                <li><a  href="/search.html"> Search </a> </a></li>
+                <li><a  href="upload_song"> Upload a Song </a> </a></li>
+                    <li><a  href="createplay.html"> Create Playlists  </a> </a></li>
+                <li><a  href="/top5.html"> Top 5 Songs  </a> </a></li>
+
+                <li class="dropdown">
+                    <a href="myaccount.html"> My Account &#9660;</a>
+                    <ul class="dropdown-content">
+                        <li><a href="myaccount.html">Account Settings</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+	</header>
+	<br>
+	<br>
+	<br>
+    <div class="container">
+		<div class="sidebar">
+			<h2>My Account</h2>
+
+			<a href="myaccount.html">
+				<div class="menu-item" id="overview">Account Overview</div>
+			</a>
+
+			<a href="/editP.html">
+				<div class="menu-item" id="edit" >Edit Profile</div>
+			</a>
+
+			<a href="/logout">
+			<div class="menu-item" id="lout">Logout</div>
+		</a>
+		</div>
+	
+		<div class="main-content" id="main-content">
+			<!-- Your main content goes here -->
+			<div class="con">
+				<h1>Account Overview</h1>
+				<table>
+				   <tr>
+					<td>First Name:</td>
+					<td>{{.First}}</td>
+				   </tr>
+				   <tr>
+					<td>Last Name:</td>
+					<td>{{.Last}}</td>
+				   </tr>
+				  <tr>
+					<td>Username:</td>
+					<td>{{.Username}}</td>
+				  </tr>
+				  <tr>
+					<td>User ID:</td>
+					<td>{{.UserID}}</td>
+				  </tr>
+				  <tr>
+					<td>Email:</td>
+					<td>{{.Email}}</td>
+				  </tr>
+				  
+				  <tr>
+					<td>Date Registered:</td>
+					<td>{{.Date_regist}}</td>
+				  </tr>
+				 <!--<tr>
+					<td>Access Level:</td>
+					<td>Standard</td>
+				  </tr>-->
+				</table>
+			  </div>
+			</div>
+		</div>
+		</body>
+            
+
+	 <script>
+		const overviewBtn = document.getElementById("overview");
+		const editBtn = document.getElementById("edit");
+		const changep = document.getElementById("changepass")
+		const mainContent = document.getElementById("main-content");
+
+		overviewBtn.addEventListener("click", () => {
+			fetch("AO.html")
+                .then(response => response.text())
+                .then(data => mainContent.innerHTML = data);
+		});
+
+		editBtn.addEventListener("click", () => {
+			fetch("editP.html")
+				.then(response=>response.text())
+				.then(data=>mainContent.innerHTML = data)
+			/*mainContent.innerHTML = "<h1>T</h1>";*/
+		});
+		changep.addEventListener("click",()=> {
+			fetch("changepass.html")
+				.then(response=>response.text())
+				.then(data=>mainContent.innerHTML=data)
+
+
+
+		});
+
+
+		
+
+
+	</script> 
+    
+</body>

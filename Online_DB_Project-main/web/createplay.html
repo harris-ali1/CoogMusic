@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>Coog Music - Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css"/>
+    <style>
+        
+        .tester{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+        
+		.button {
+			display: inline-block;
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			font-size: 16px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			margin-top: 20px;
+            font-size: 200%;
+		}
+        input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 200%;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+    </style>
+    
+</head>
+<style>
+    body{
+    margin: 0;
+    padding: 0;
+    background: url("/images/bkn.jpeg");
+    /* background-color: black; */
+    background-size: cover;
+    /* background-position: center; */
+    font-family: sans-serif;
+}
+</style>
+<body>
+    <header>
+        <div class="main">
+            <ul>
+                <li><a  href="/"> Home</a> </a></li>
+                <li><a  href="search.html"> Search </a> </a></li>
+                <li><a  href="upload_song"> Upload a Song </a> </a></li>
+                    <li><a  href="createplay.html"> Create Playlists  </a> </a></li>
+                <li><a  href="/top5.html"> Top 5 Songs  </a> </a></li>
+
+                <li class="dropdown">
+                    <a href="myaccount.html"> My Account &#9660;</a>
+                    <ul class="dropdown-content">
+                        <li><a href="AO.html">Account Settings</a></li>
+                        <li><a href="/logout.html">logout</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="tester">
+            <form method="POST">
+                <input type="text" id="playlistTitle" name="playlistTitle" placeholder="Enter playlist title...">
+                <button type="submit" class="button">Create Playlist</button>
+                <p style="color:red">{{.}}</p>
+            </form>  
+        </div>
+        
+    </header>
+
+    
+    
+</body>
+</html>
